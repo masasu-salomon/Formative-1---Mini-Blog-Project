@@ -81,13 +81,13 @@ A class component or `PureComponent` would have been reasonable if I needed olde
 
 I used **two styling methods**:
 
-1. **External CSS files** for layout, header styles, and post cards (`src/styles/index.css`, `App.css`, and `Header.css`).
-2. **Inline styles** for the **New Post** button and for author/badge details in `Post`.
+1. **External CSS files** for the newspaper-style masthead, paper texture, and editorial post layout (`src/styles/index.css`, `App.css`, and `Header.css`).
+2. **Inline styles** for the **New Post** link and for author/badge details in `Post`.
 
 Conditional styling is used in two places:
 
-- Posts by `Jordan Lee` receive the `post-card--featured` class, which changes the card background.
-- Posts from the last 24 hours render a **New!** badge with inline styles.
+- Posts by `Jordan Lee` receive the `post-card--featured` class, which turns that entry into a larger staff-pick lead story.
+- Posts from the last 24 hours render a stamped **New!** badge with inline styles.
 
 ## Optimization strategies
 

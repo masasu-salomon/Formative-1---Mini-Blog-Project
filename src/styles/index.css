@@ -1,9 +1,19 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --ink: #1b1410;
+  --ink-soft: #4a3c32;
+  --paper: #efe3cf;
+  --paper-deep: #e4d3b4;
+  --rule: #1b1410;
+  --rust: #b42318;
+  --rust-deep: #8a1c14;
+  --stamp: #c2410c;
+  --font-display: 'Fraunces', 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.55;
   font-weight: 400;
-  color: #1c1917;
-  background-color: #f5f1ea;
+  color: var(--ink);
+  background-color: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +29,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(rgba(27, 20, 16, 0.035) 0.7px, transparent 0.7px),
+    linear-gradient(180deg, #f4ead6 0%, var(--paper) 18%, #ead8b8 100%);
+  background-size: 4px 4px, 100% 100%;
 }
 
 #root {
@@ -27,6 +42,6 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--rust);
   outline-offset: 3px;
 }

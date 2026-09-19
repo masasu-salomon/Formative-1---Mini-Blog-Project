@@ -10,6 +10,7 @@ function App() {
       <main className="app-main">
         <PostList />
       </main>
+      <footer className="app-colophon">Dev Insights · Internal mini blog · Printed for the team</footer>
     </div>
   )
 }

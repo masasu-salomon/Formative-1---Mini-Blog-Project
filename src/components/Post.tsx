@@ -4,14 +4,19 @@ import { FEATURED_AUTHOR, formatPostDate, getContentPreview, isPostedWithinLastD
 
 interface PostProps {
   post: PostData
+  index: number
 }
 
-function Post({ post }: PostProps) {
+function Post({ post, index }: PostProps) {
   const isFeaturedAuthor = post.author === FEATURED_AUTHOR
   const isNew = isPostedWithinLastDay(post.datePosted)
+  const displayIndex = String(index + 1).padStart(2, '0')
 
   return (
     <article className={`post-card${isFeaturedAuthor ? ' post-card--featured' : ''}`}>
+      <span className="post-card__index" aria-hidden="true">
+        {displayIndex}
+      </span>
       <div className="post-card__top">
         <h2 className="post-card__title">{post.title}</h2>
         {isNew ? (
@@ -24,6 +29,7 @@ function Post({ post }: PostProps) {
         <span style={isFeaturedAuthor ? featuredAuthorStyle : authorStyle}>{post.author}</span>
         <span aria-hidden="true"> · </span>
         <time dateTime={post.datePosted}>{formatPostDate(post.datePosted)}</time>
+        {isFeaturedAuthor ? <span> · Staff pick</span> : null}
       </p>
       <p className="post-card__preview">{getContentPreview(post.content)}</p>
     </article>
@@ -31,23 +37,25 @@ function Post({ post }: PostProps) {
 }
 
 const authorStyle = {
-  color: '#44403c',
+  color: '#4a3c32',
 }
 
 const featuredAuthorStyle = {
-  color: '#1d4ed8',
+  color: '#8a1c14',
   fontWeight: 700,
 }
 
 const newBadgeStyle = {
   display: 'inline-block',
-  padding: '0.15rem 0.5rem',
-  borderRadius: '999px',
-  backgroundColor: '#16a34a',
-  color: '#ffffff',
-  fontSize: '0.75rem',
+  padding: '0.2rem 0.45rem',
+  border: '1.5px solid #c2410c',
+  backgroundColor: '#fff4e6',
+  color: '#c2410c',
+  fontSize: '0.68rem',
   fontWeight: 700,
-  letterSpacing: '0.02em',
+  letterSpacing: '0.14em',
+  textTransform: 'uppercase' as const,
+  transform: 'rotate(-6deg)',
 }
 
 export default memo(Post)

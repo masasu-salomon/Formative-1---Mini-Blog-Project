@@ -8,12 +8,12 @@ function PostList() {
   return (
     <section className="post-list" aria-labelledby="latest-posts">
       <div className="post-list__intro">
-        <h1 id="latest-posts">Latest posts</h1>
-        <p>Quick tips, insights, and updates from the Dev Insights team.</p>
+        <h1 id="latest-posts">From the desk.</h1>
+        <p>Quick tips, insights, and updates circulating inside Dev Insights this week.</p>
       </div>
       <div className="post-list__items">
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
+        {posts.map((post, index) => (
+          <Post key={post.id} post={post} index={index} />
         ))}
       </div>
     </section>
