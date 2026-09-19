@@ -1,3 +1,5 @@
+import withLogger from '../hoc/withLogger'
+
 const newPostLinkStyle = {
   padding: '0.5rem 0.9rem',
   backgroundColor: '#3b82f6',
@@ -23,4 +25,4 @@ function Header() {
   )
 }
 
-export default Header
+export default withLogger(Header, 'Header')

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import type { Post as PostData } from '../types/post'
 import { FEATURED_AUTHOR, formatPostDate, getContentPreview, isPostedWithinLastDay } from '../utils/posts'
 
@@ -49,4 +50,4 @@ const newBadgeStyle = {
   letterSpacing: '0.02em',
 }
 
-export default Post
+export default memo(Post)
