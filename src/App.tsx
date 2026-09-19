@@ -1,8 +1,14 @@
+import Header from './components/Header'
+import PostList from './components/PostList'
+
 function App() {
   return (
-    <main>
-      <h1>Dev Insights Mini Blog</h1>
-    </main>
+    <div className="app">
+      <Header />
+      <main className="app-main">
+        <PostList />
+      </main>
+    </div>
   )
 }
 
